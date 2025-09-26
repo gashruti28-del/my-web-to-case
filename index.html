@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FedEx Web-to-Case Form</title>
+    <link rel="icon" type="image/png" href="https://www.fedex.com/etc.clientlibs/fedex/clientlibs/clientlib-site/resources/images/favicon.ico">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f5f5;
+      color: #333;
+    }
+
+    header {
+      background: #4d148c; /* FedEx purple */
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    header img {
+      height: 60px;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: normal;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr; /* Left, Center, Right */
+      gap: 20px;
+      padding: 30px;
+      min-height: 70vh;
+    }
+
+    .panel {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .panel h3 {
+      color: #4d148c;
+      margin-top: 0;
+    }
+
+    form label {
+      display: block;
+      margin-top: 12px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    form input, form select, form textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    form input[type="submit"] {
+      background: #4d148c;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    form input[type="submit"]:hover {
+      background: #ff6600; /* FedEx orange hover */
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #f1f1f1;
+      font-size: 13px;
+      color: #555;
+      border-top: 1px solid #ccc;
+    }
+
+    footer img {
+      height: 40px;
+      margin-bottom: 8px;
+    }
+
+    footer a {
+      color: #4d148c;
+      text-decoration: none;
+      font-size: 12px;
+      margin: 0 6px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <img src="https://www.fedex.com/content/dam/fedex-com/logos/logo.png" alt="FedEx Logo">
+    <h2>Customer Support – Web-to-Case</h2>
+  </header>
+
+  <!-- 3-Panel Content -->
+  <div class="container">
+    <div class="panel">
+      <h3>Help & Info</h3>
+      <p>Use this form to submit your case.  
+         Provide a valid email and phone number so our team can assist you faster.</p>
+    </div>
+
+    <div class="panel">
+      <h3>Case Submission Form</h3>
+      <form action="https://ruby-page-8052--fairdev1.sandbox.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DOv00000JCe5B" method="POST">
+
+        <input type="hidden" name="orgid" value="00DOv00000JCe5B">
+        <input type="hidden" name="retURL" value="https://gashruti28-del.github.io/my-web-to-case/CaseSuccess.html">
+         
+	
+
+        <label for="name">Contact Name</label>
+        <input id="name" maxlength="80" name="name" type="text">
+
+        <label for="email">Email</label>
+        <input id="email" maxlength="80" name="email" type="text">
+
+        <label for="phone">Phone</label>
+        <input id="phone" maxlength="40" name="phone" type="text">
+
+        <label for="subject">Subject</label>
+        <input id="subject" maxlength="80" name="subject" type="text">
+
+        <label for="description">Description</label>
+        <textarea name="description"></textarea>
+
+        <label for="priority">Priority</label>
+        <select id="priority" name="priority">
+          <option value="">--None--</option>
+          <option value="High" selected>High</option>
+          <option value="Medium">Medium</option>
+          <option value="Low">Low</option>
+        </select>
+
+        <label for="type">Type</label>
+        <select id="type" name="type">
+          <option value="">--None--</option>
+          <option value="Problem">Problem</option>
+          <option value="Feature Request">Feature Request</option>
+          <option value="Question">Question</option>
+          <option value="Website Support">Website Support</option>
+          <option value="OS&amp;D">OS&amp;D</option>
+          <option value="Main Invoicing" selected>Main Invoicing</option>
+        </select>
+
+        <input type="submit" value="Submit Case">
+      </form>
+    </div>
+
+    <div class="panel">
+      <h3>Contact Us</h3>
+      <p>Email: support@fedex.com</p>
+      <p>Phone: +1 (800) 123-4567</p>
+      <p>Working Hours: 9AM – 6PM</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <img src="https://www.fedex.com/content/dam/fedex-com/logos/logo.png" alt="FedEx Logo"><br>
+    © 1995–2025 FedEx. All rights reserved.<br>
+    <a href="https://www.fedex.com/en-us/terms-of-use.html" target="_blank">Terms of Use</a> | 
+    <a href="https://www.fedex.com/en-us/privacy-policy.html" target="_blank">Privacy Policy</a>
+  </footer>
+
+</body>
+</html>
